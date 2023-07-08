@@ -85,9 +85,10 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 	case tea.WindowSizeMsg:
 		x, y := appStyle.GetFrameSize()
 
-		m.list.SetSize(msg.Width-x, msg.Height-y)
+		//m.list.SetSize(msg.Width-x, msg.Height-y)
+		m.list.SetSize(50, 15)
 
-		m.viewport.Width = x //msg.Width - x
+		m.viewport.Width = 50 //msg.Width - x
 		footerHeight := lipgloss.Height(m.viewportHelp())
 		m.viewport.Height = msg.Height - footerHeight
 
