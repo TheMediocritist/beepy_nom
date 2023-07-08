@@ -18,7 +18,7 @@ import (
 const listHeight = 14
 
 var (
-	appStyle          = lipgloss.NewStyle().Padding(0).Margin(0)
+	appStyle          = lipgloss.NewStyle().Padding(0).Margin(0).Background(lipgloss.Color("#ffffff"))
 	titleStyle        = list.DefaultStyles().Title.Margin(1, 0, 0, 0)
 	itemStyle         = lipgloss.NewStyle().PaddingLeft(4)
 	selectedItemStyle = lipgloss.NewStyle().PaddingLeft(2).Foreground(lipgloss.Color("170"))
@@ -27,7 +27,7 @@ var (
 				HelpStyle.
 				PaddingLeft(0).
 				PaddingBottom(0).
-				Foreground(lipgloss.Color("#ffffff"))
+				Foreground(lipgloss.Color("#000000"))
 )
 
 type Item struct {
