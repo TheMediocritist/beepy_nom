@@ -190,7 +190,7 @@ func viewportView(m model) string {
 }
 
 func (m model) viewportHelp() string {
-	return helpStyle.Render("\n↑/k up • ↓/j down • gg top • G bottom • q/esc back")
+	return helpStyle.Render("\n↑/k up • ↓/j down • g top • G bottom • q/esc back")
 }
 
 func RSSToItem(c rss.Item) Item {
