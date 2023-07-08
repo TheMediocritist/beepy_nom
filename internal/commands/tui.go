@@ -3,7 +3,7 @@ package commands
 import (
 	"fmt"
 	"io"
-	"os"
+	//"os"
 
 	"github.com/charmbracelet/bubbles/key"
 	"github.com/charmbracelet/bubbles/list"
