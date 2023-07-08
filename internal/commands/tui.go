@@ -202,8 +202,10 @@ func Render(items []list.Item, cmds Commands) error {
 	//_, ts, _ := term.GetSize(int(os.Stdout.Fd()))
 	//_, y := appStyle.GetFrameSize()
 	height := 15
+	width := 50
 
 	appStyle.Height(height)
+	appStyle.Width(width)
 
 	l := list.New(items, itemDelegate{}, defaultWidth, height)
 	l.SetShowStatusBar(false)
