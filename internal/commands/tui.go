@@ -83,7 +83,7 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 	// when switching
 	switch msg := msg.(type) {
 	case tea.WindowSizeMsg:
-		x, y := appStyle.GetFrameSize()
+		//x, y := appStyle.GetFrameSize()
 
 		//m.list.SetSize(msg.Width-x, msg.Height-y)
 		m.list.SetSize(50, 15)
