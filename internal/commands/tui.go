@@ -87,9 +87,9 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 
 		m.list.SetSize(msg.Width-x, msg.Height-y)
 
-		m.viewport.Width = 50 //msg.Width - x
+		m.viewport.Width = x //msg.Width - x
 		footerHeight := lipgloss.Height(m.viewportHelp())
-		m.viewport.Height = msg.Height - footerHeight
+		m.viewport.Height = y - footerHeight //msg.Height - footerHeight
 
 		return m, nil
 	}
