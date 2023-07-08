@@ -202,7 +202,7 @@ func Render(items []list.Item, cmds Commands) error {
 	//_, ts, _ := term.GetSize(int(os.Stdout.Fd()))
 	//_, y := appStyle.GetFrameSize()
 	height := 15
-	width := 50
+	width := 50 // Eh... if we do this the list items wrap which is awful. Maybe I can change their width in the rss parser.
 
 	appStyle.Height(height)
 	appStyle.Width(width)
