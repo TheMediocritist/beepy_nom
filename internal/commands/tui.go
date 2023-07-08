@@ -27,7 +27,7 @@ var (
 				HelpStyle.
 				PaddingLeft(0).
 				PaddingBottom(0).
-				Background(lipgloss.Color("#000000").
+				Background(lipgloss.Color("#000000")).
 				Foreground(lipgloss.Color("#ffffff"))
 )
 
