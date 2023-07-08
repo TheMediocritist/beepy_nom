@@ -25,9 +25,9 @@ var (
 	paginationStyle   = list.DefaultStyles().PaginationStyle.PaddingLeft(4)
 	helpStyle         = list.DefaultStyles().
 				HelpStyle.
-				PaddingLeft(4).
-				PaddingBottom(1).
-				Foreground(lipgloss.Color("#4A4A4A"))
+				PaddingLeft(0).
+				PaddingBottom(0).
+				Foreground(lipgloss.Color("#ffffff"))
 )
 
 type Item struct {
