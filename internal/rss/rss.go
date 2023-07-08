@@ -37,9 +37,7 @@ type RSS struct {
 }
 
 func GlamouriseItem(item Item) (string, error) {
-	r, _ := glamour.NewTermRenderer(
-	    glamour.WithWordWrap(50),
-)
+	r, _ := glamour.NewTermRenderer(glamour.WithWordWrap(50)) // This shouldn't be inside the function
 	var mdown string
 
 	mdown += "# " + item.Title
@@ -50,7 +48,7 @@ func GlamouriseItem(item Item) (string, error) {
 	mdown += "\n\n"
 	mdown += htmlToMd(item.Content)
 
-	out, err := r.Render(mdown)//, "light")
+	out, err := r.Render(mdown)//, "light") // work out how to theme custom renderer
 	if err != nil {
 		return "", fmt.Errorf("GlamouriseItem: %w", err)
 	}
