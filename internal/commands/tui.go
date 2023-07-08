@@ -225,7 +225,7 @@ func Render(items []list.Item, cmds Commands) error {
 		}
 	}
 
-	vp := viewport.New(78, height)
+	vp := viewport.New(50, height)
 
 	m := model{list: l, commands: cmds, viewport: vp}
 
