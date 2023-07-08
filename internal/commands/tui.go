@@ -207,7 +207,7 @@ func Render(items []list.Item, cmds Commands) error {
 	appStyle.Height(height)
 	appStyle.Width(width)
 
-	l := list.New(items, itemDelegate{}, defaultWidth, height)
+	l := list.New(items, itemDelegate{}, defaultWidth, 5)
 	l.SetShowStatusBar(false)
 	l.SetFilteringEnabled(false)
 	l.Title = "nom 🍜"
