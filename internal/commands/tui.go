@@ -149,17 +149,11 @@ func updateViewport(msg tea.Msg, m model) (tea.Model, tea.Cmd) {
 	case tea.KeyMsg:
 		switch keypress := msg.String(); keypress {
 		case "g":
-			if m.prevKeyWasG {
-				m.viewport.GotoTop()
-				m.prevKeyWasG = false
-			} else {
-				m.prevKeyWasG = true
-			}
+			m.viewport.GotoTop()
 		case "G":
 			m.viewport.GotoBottom()
 		case "esc", "q":
 			m.selectedArticle = ""
-
 		case "ctrl+c":
 			return m, tea.Quit
 		}
@@ -191,7 +185,7 @@ func viewportView(m model) string {
 }
 
 func (m model) viewportHelp() string {
-	return helpStyle.Render("↑/k up • ↓/j down • gg top • G bottom • q/esc back")
+	return helpStyle.Render("↑/k up • ↓/j down • g top • G bottom • q/esc back")
 }
 
 func RSSToItem(c rss.Item) Item {
@@ -206,7 +200,7 @@ func Render(items []list.Item, cmds Commands) error {
 	const defaultWidth = 20
 	_, ts, _ := term.GetSize(int(os.Stdout.Fd()))
 	_, y := appStyle.GetFrameSize()
-	height := ts - y
+	height := 15
 
 	appStyle.Height(height)
 
@@ -226,7 +220,7 @@ func Render(items []list.Item, cmds Commands) error {
 		}
 	}
 
-	vp := viewport.New(50, height)
+	vp := viewport.New(50, 15)
 
 	m := model{list: l, commands: cmds, viewport: vp}
 
