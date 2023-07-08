@@ -12,6 +12,8 @@ import (
 	"github.com/guyfedwards/nom/internal/config"
 )
 
+
+
 type Item struct {
 	Title       string  `xml:"title"`
 	Link        string  `xml:"link"`
@@ -35,6 +37,9 @@ type RSS struct {
 }
 
 func GlamouriseItem(item Item) (string, error) {
+	r, _ := glamour.NewTermRenderer(
+	    glamour.WithWordWrap(40),
+)
 	var mdown string
 
 	mdown += "# " + item.Title
@@ -45,7 +50,7 @@ func GlamouriseItem(item Item) (string, error) {
 	mdown += "\n\n"
 	mdown += htmlToMd(item.Content)
 
-	out, err := glamour.Render(mdown, "light")
+	out, err := r.Render(mdown, "light")
 	if err != nil {
 		return "", fmt.Errorf("GlamouriseItem: %w", err)
 	}
