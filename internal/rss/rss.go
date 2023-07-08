@@ -45,7 +45,7 @@ func GlamouriseItem(item Item) (string, error) {
 	mdown += "\n\n"
 	mdown += htmlToMd(item.Content)
 
-	out, err := glamour.Render(mdown, "dark")
+	out, err := glamour.Render(mdown, "light")
 	if err != nil {
 		return "", fmt.Errorf("GlamouriseItem: %w", err)
 	}
