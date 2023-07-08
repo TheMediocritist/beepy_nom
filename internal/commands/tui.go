@@ -87,7 +87,7 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 
 		m.list.SetSize(msg.Width-x, msg.Height-y)
 
-		m.viewport.Width = msg.Width - x
+		m.viewport.Width = 50 //msg.Width - x
 		footerHeight := lipgloss.Height(m.viewportHelp())
 		m.viewport.Height = msg.Height - footerHeight
 
@@ -190,7 +190,7 @@ func viewportView(m model) string {
 }
 
 func (m model) viewportHelp() string {
-	return helpStyle.Render("\n↑/k up • ↓/j down • g top • G bottom • q/esc back")
+	return helpStyle.Render("\n↑/k up • ↓/j down • gg top • G bottom • q/esc back")
 }
 
 func RSSToItem(c rss.Item) Item {
@@ -202,7 +202,7 @@ func RSSToItem(c rss.Item) Item {
 }
 
 func Render(items []list.Item, cmds Commands) error {
-	const defaultWidth = 8
+	const defaultWidth = 20
 	_, ts, _ := term.GetSize(int(os.Stdout.Fd()))
 	_, y := appStyle.GetFrameSize()
 	height := ts - y
