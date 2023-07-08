@@ -198,8 +198,8 @@ func RSSToItem(c rss.Item) Item {
 
 func Render(items []list.Item, cmds Commands) error {
 	const defaultWidth = 20
-	_, ts, _ := term.GetSize(int(os.Stdout.Fd()))
-	_, y := appStyle.GetFrameSize()
+	//_, ts, _ := term.GetSize(int(os.Stdout.Fd()))
+	//_, y := appStyle.GetFrameSize()
 	height := 15
 
 	appStyle.Height(height)
