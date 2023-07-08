@@ -27,7 +27,9 @@ var (
 				HelpStyle.
 				PaddingLeft(0).
 				PaddingBottom(0).
-				Foreground(lipgloss.Color("#000000"))
+				Foreground(lipgloss.Color("#ffffff"))
+	
+				Background(lipgloss.Color("#000000"))
 )
 
 type Item struct {
