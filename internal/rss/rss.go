@@ -38,7 +38,7 @@ type RSS struct {
 
 func GlamouriseItem(item Item) (string, error) {
 	r, _ := glamour.NewTermRenderer(
-	    glamour.WithWordWrap(40),
+	    glamour.WithWordWrap(50),
 )
 	var mdown string
 
